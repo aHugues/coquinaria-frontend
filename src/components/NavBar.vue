@@ -17,14 +17,14 @@ export default {
 </script>
 
 
-<style lang="sass">
-.navbar
-    width: 100%
-    height: 100%
-    background-color: #388E3C
-    padding: 20px
-    box-sizing: border-box
-    
+<style lang="scss">
+.navbar {
+    width: 100%;
+    height: 100%;
+    background-color: #388E3C;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 </style>
 

@@ -22,27 +22,31 @@ export default {
 };
 </script>
 
-<style lang="sass">
-body
-  margin: 0
-#app
-  position: fixed
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-  background-color: lightgrey
-.navbar-wrapper
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  height: 100px
-.main-page-wrapper
-  position: absolute
-  top: 100px
-  left: 0
-  right: 0
-  bottom: 0
+<style lang="scss">
+body {
+  margin: 0;
+}
+#app {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: lightgrey;
+}
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+.main-page-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 </style>
