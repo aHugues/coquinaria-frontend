@@ -12,6 +12,9 @@ export default {
 
 
 <style lang="scss">
+.nav-element-wrapper {
+    color: #EEEEEE;
+}
 
 </style>
 

@@ -1,5 +1,6 @@
 <template>
     <div class="navbar">
+        <NavTitle></NavTitle>
         <NavElement></NavElement>
         <NavElement></NavElement>
     </div>
@@ -7,11 +8,13 @@
 
 <script>
 import NavElement from './NavElement.vue';
+import NavTitle from './NavTitle.vue';
 
 export default {
     name: "NavBar",
     components: {
         NavElement,
+        NavTitle,
     }
 }
 </script>
@@ -24,6 +27,9 @@ export default {
     background-color: #388E3C;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 </style>

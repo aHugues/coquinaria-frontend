@@ -14,7 +14,7 @@ export default {
 #main-page {
     height: 100%;
     width: 100%;
-    background-color: grey;
+    background-color: #F5F5F5;
 }
 </style>
 

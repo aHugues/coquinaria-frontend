@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/NavBar/NavBar.vue';
 import MainPage from './components/MainPage.vue';
 
 export default {
@@ -23,8 +23,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+$navbar-height: 60px;
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 #app {
   position: fixed;
@@ -32,18 +35,18 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: lightgrey;
+  background-color: #F5F5F5;
 }
 .navbar-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: $navbar-height;
 }
 .main-page-wrapper {
   position: absolute;
-  top: 100px;
+  top: $navbar-height;
   left: 0;
   right: 0;
   bottom: 0;
