@@ -1,8 +1,14 @@
 <template>
     <div id="main-page">
-        <div class="categories-wrapper">
+        <div v-if="category != ''" class="selected-category-wrapper" @click="onCloseCategory">
+          <div v-on:click.stop class="selected-category-content">
+            <recipes-list :category="category"></recipes-list>
+          </div>
+        </div>
+        <div v-if="category == ''" class="categories-wrapper">
             <recipe-category
               v-for="(category, index) in categories"
+              v-on:open-category="onOpenCategory"
               :categoryName="category" :key="index" :imageUrl="images[index]">
             </recipe-category>
         </div>
@@ -11,6 +17,7 @@
 
 <script>
 import RecipeCategory from './RecipeCategory/RecipeCategory.vue';
+import RecipesList from './Recipe/RecipesList.vue';
 
 // TODO: programmatically get list of categories instead of hardcoded list
 const categoriesList = [
@@ -26,19 +33,51 @@ const imagesList = categoriesList.map(category => `/img/categories/${category.to
 const getCategories = () => ({
   categories: categoriesList,
   images: imagesList,
+  category: '',
 });
 
+function onOpenCategory(category) {
+  this.category = category;
+}
+
+function onCloseCategory() {
+  this.category = '';
+}
 
 export default {
   name: 'MainPage',
   components: {
     RecipeCategory,
+    RecipesList,
   },
   data: getCategories,
+  methods: {
+    onOpenCategory,
+    onCloseCategory,
+  },
 };
 </script>
 
 <style lang="scss">
+
+.selected-category-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    padding-top: 1%;
+    background-color: grey;
+}
+
+.selected-category-content {
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  background-color: #E0E0E0;
+  border-radius: 5px;
+
+}
+
 #main-page {
     height: 100%;
     width: 100%;

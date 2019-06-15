@@ -1,7 +1,8 @@
 <template>
     <div class="category-card-wrapper"
         :style="backgroundStyleBase"
-        @mouseover="hover = true" @mouseleave="hover = false">
+        @mouseover="hover = true" @mouseleave="hover = false"
+        @click="$emit('open-category', categoryName)">
       <div class="category-card-overlay" :class="{ hover: hover}">
         <div class="category-card-content">
             <h3 class="category-card-name" :class="{ hover: hover}">
@@ -58,6 +59,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     transition: background-image 0.5s;
+    cursor: pointer;
 }
 .category-card-content {
     padding: 10px;
