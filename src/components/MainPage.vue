@@ -50,7 +50,8 @@ export default {
     height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    margin: auto;
     // grid-template-rows: auto auto;
     gap: 20px;
 }
