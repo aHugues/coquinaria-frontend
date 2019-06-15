@@ -50,26 +50,26 @@ export default {
     height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     // grid-template-rows: auto auto;
     gap: 20px;
 }
 
-@media only screen and (max-width: 1700px) {
-    .categories-wrapper {
-        grid-template-columns: auto auto auto;
-    }
+// @media only screen and (max-width: 1700px) {
+//     .categories-wrapper {
+//         grid-template-columns: auto auto auto;
+//     }
 
-@media only screen and (max-width: 1300px) {
-    .categories-wrapper {
-        grid-template-columns: auto auto;
-    }
-}
+// @media only screen and (max-width: 1300px) {
+//     .categories-wrapper {
+//         grid-template-columns: auto auto;
+//     }
+// }
 
-@media only screen and (max-width: 900px) {
-    .categories-wrapper {
-        grid-template-columns: auto;
-    }
-}
-}
+// @media only screen and (max-width: 900px) {
+//     .categories-wrapper {
+//         grid-template-columns: auto;
+//     }
+// }
+// }
 </style>
