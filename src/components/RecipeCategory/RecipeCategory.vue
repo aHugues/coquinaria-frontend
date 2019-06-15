@@ -1,8 +1,8 @@
 <template>
-    <div class="category-card-wrapper">
+    <div class="category-card-wrapper" :style="backgroundStyle">
         <div class="category-card-content">
             <div class="category-card-name">
-                Category
+                {{ categoryName }}
             </div>
         </div>
     </div>
@@ -10,7 +10,23 @@
 
 <script>
 export default {
-
+    name: "RecipeCategory",
+    props: {
+        categoryName: String,
+        imageUrl: String,
+    },
+    computed: {
+        backgroundStyle: function () {
+            return {
+                backgroundImage: `
+                linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)
+                ),
+                url("${this.imageUrl}")
+            `};
+        }
+    }
 }
 </script>
 
@@ -20,12 +36,6 @@ export default {
     /* min-width: 400px; */
     height: 100%;
     box-sizing: border-box;
-    background-image: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-        ),
-        url("../../assets/categories/biscuit.png");
     background-repeat: no-repeat;
     background-size: cover;
 
