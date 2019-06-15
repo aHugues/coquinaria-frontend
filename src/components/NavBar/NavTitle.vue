@@ -6,9 +6,8 @@
 
 <script>
 export default {
-    name: 'NavTitle'
-
-}
+  name: 'NavTitle',
+};
 </script>
 
 <style>

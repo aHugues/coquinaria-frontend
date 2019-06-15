@@ -11,12 +11,12 @@ import NavElement from './NavElement.vue';
 import NavTitle from './NavTitle.vue';
 
 export default {
-    name: "NavBar",
-    components: {
-        NavElement,
-        NavTitle,
-    }
-}
+  name: 'NavBar',
+  components: {
+    NavElement,
+    NavTitle,
+  },
+};
 </script>
 
 
@@ -33,4 +33,3 @@ export default {
 }
 
 </style>
-

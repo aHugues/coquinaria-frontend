@@ -10,24 +10,25 @@
 
 <script>
 export default {
-    name: "RecipeCategory",
-    props: {
-        categoryName: String,
-        imageUrl: String,
+  name: 'RecipeCategory',
+  props: {
+    categoryName: String,
+    imageUrl: String,
+  },
+  computed: {
+    backgroundStyle() {
+      return {
+        backgroundImage: `
+          linear-gradient(
+              rgba(0, 0, 0, 0.6),
+              rgba(0, 0, 0, 0.6)
+          ),
+          url("${this.imageUrl}")
+        `,
+      };
     },
-    computed: {
-        backgroundStyle: function () {
-            return {
-                backgroundImage: `
-                linear-gradient(
-                    rgba(0, 0, 0, 0.6),
-                    rgba(0, 0, 0, 0.6)
-                ),
-                url("${this.imageUrl}")
-            `};
-        }
-    }
-}
+  },
+};
 </script>
 
 <style>

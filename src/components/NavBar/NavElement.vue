@@ -6,8 +6,8 @@
 
 <script>
 export default {
-    name: 'NavElement',
-}
+  name: 'NavElement',
+};
 </script>
 
 
@@ -17,4 +17,3 @@ export default {
 }
 
 </style>
-

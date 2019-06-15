@@ -1,8 +1,10 @@
 <template>
     <div id="main-page">
         <div class="categories-wrapper">
-            <recipe-category v-for="(category, index) in categories" v-bind:categoryName="category" :key="index" :imageUrl="images[index]"></recipe-category>
-            <!-- <recipe-category v-bind:categoryName="categories[0]"></recipe-category> -->
+            <recipe-category
+              v-for="(category, index) in categories"
+              :categoryName="category" :key="index" :imageUrl="images[index]">
+            </recipe-category>
         </div>
     </div>
 </template>
@@ -11,31 +13,29 @@
 import RecipeCategory from './RecipeCategory/RecipeCategory.vue';
 
 // TODO: programmatically get list of categories instead of hardcoded list
-let categoriesList = [
-    'Entries',
-    'Meals',
-    'Sauces',
-    'Desserts',
-    'Cakes',
-    'Bakeries'
+const categoriesList = [
+  'Entries',
+  'Meals',
+  'Sauces',
+  'Desserts',
+  'Cakes',
+  'Bakeries',
 ];
-let imagesList = categoriesList.map((category) => `/img/categories/${category.toLowerCase()}.png`);
+const imagesList = categoriesList.map(category => `/img/categories/${category.toLowerCase()}.png`);
 
-let getCategories = () => {
-    return {
-        categories: categoriesList,
-        images: imagesList,
-    }
-};
+const getCategories = () => ({
+  categories: categoriesList,
+  images: imagesList,
+});
 
 
 export default {
-    name: "MainPage",
-    components: {
-        RecipeCategory,
-    },
-    data: getCategories,
-}
+  name: 'MainPage',
+  components: {
+    RecipeCategory,
+  },
+  data: getCategories,
+};
 </script>
 
 <style lang="scss">
@@ -73,4 +73,3 @@ export default {
 }
 }
 </style>
-
