@@ -17,8 +17,8 @@ export default {
 <style>
 .category-card-wrapper {
     border-radius: 5px;
-    min-width: 400px;
-    height: 500px;
+    /* min-width: 400px; */
+    height: 100%;
     box-sizing: border-box;
     background-image: 
         linear-gradient(
