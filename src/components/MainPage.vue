@@ -67,10 +67,10 @@ export default {
 //     }
 // }
 
-// @media only screen and (max-width: 900px) {
-//     .categories-wrapper {
-//         grid-template-columns: auto;
-//     }
-// }
+@media only screen and (max-width: 900px) {
+    .categories-wrapper {
+        grid-template-columns: auto;
+    }
+}
 // }
 </style>
