@@ -3,7 +3,7 @@
         <div v-if="category != ''" class="selected-category-wrapper" @v-on:close-category="onCloseCategory">
           <!-- <div v-on:click.stop class="selected-category-content"> -->
             <div class="vertical-navbar-wrapper">
-              <vertical-nav-bar></vertical-nav-bar>
+              <vertical-nav-bar :categories="categories" :selectedCategory="category"></vertical-nav-bar>
             </div>
             <div class="recipes-category-wrapper">
               <recipes-list :category="category"></recipes-list>
