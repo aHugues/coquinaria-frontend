@@ -1,6 +1,8 @@
 <template>
   <div class="recipes-list-wrapper">
-    category: {{ category }}
+    <h2 class="recipes-list-title">
+      {{ category }}
+    </h2>
   </div>
 </template>
 
@@ -14,6 +16,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.recipes-list-wrapper {
+  overflow: auto;
+}
 
 </style>

@@ -1,9 +1,14 @@
 <template>
     <div id="main-page">
-        <div v-if="category != ''" class="selected-category-wrapper" @click="onCloseCategory">
-          <div v-on:click.stop class="selected-category-content">
-            <recipes-list :category="category"></recipes-list>
-          </div>
+        <div v-if="category != ''" class="selected-category-wrapper" @v-on:close-category="onCloseCategory">
+          <!-- <div v-on:click.stop class="selected-category-content"> -->
+            <div class="vertical-navbar-wrapper">
+              <vertical-nav-bar></vertical-nav-bar>
+            </div>
+            <div class="recipes-category-wrapper">
+              <recipes-list :category="category"></recipes-list>
+            </div>
+          <!-- </div> -->
         </div>
         <div v-if="category == ''" class="categories-wrapper">
             <recipe-category
@@ -18,6 +23,7 @@
 <script>
 import RecipeCategory from './RecipeCategory/RecipeCategory.vue';
 import RecipesList from './Recipe/RecipesList.vue';
+import VerticalNavBar from './VerticalNavBar/VerticalNavBar.vue';
 
 // TODO: programmatically get list of categories instead of hardcoded list
 const categoriesList = [
@@ -49,6 +55,7 @@ export default {
   components: {
     RecipeCategory,
     RecipesList,
+    VerticalNavBar,
   },
   data: getCategories,
   methods: {
@@ -60,13 +67,31 @@ export default {
 
 <style lang="scss">
 
+$vertical-navbar-width: 300px;
+
 .selected-category-wrapper {
     width: 100%;
     height: 100%;
-    margin: auto;
+    background-color: #E0E0E0;
     box-sizing: border-box;
-    padding-top: 1%;
-    background-color: grey;
+    z-index: 10;
+}
+
+.vertical-navbar-wrapper {
+  width: $vertical-navbar-width;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 98;
+}
+
+.recipes-category-wrapper {
+  position: absolute;
+  top: 0;
+  left: $vertical-navbar-width;
+  right: 0;
+  bottom: 0;
+
 }
 
 .selected-category-content {
