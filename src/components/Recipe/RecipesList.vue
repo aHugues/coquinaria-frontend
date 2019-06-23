@@ -51,7 +51,7 @@ export default {
   },
   components: {
     VueMaterialIcon,
-  }
+  },
 };
 </script>
 
@@ -64,7 +64,6 @@ export default {
 }
 
 .recipes-list-wrapper {
-  padding: 10px;
   height: 100%;
 }
 
@@ -80,7 +79,7 @@ export default {
   grid-template-rows: 40px;
   transition: grid-template-columns 0.3s;
   align-items: center;
-  margin-bottom: 10px;
+  z-index: 95 !important;
   height: 8%;
 }
 
@@ -108,7 +107,7 @@ export default {
   row-gap: 5px;
   column-gap: 5px;
   align-items: center;
-  width: 100%;
+  // width: 100%;
 }
 
 .recipe-title {
@@ -128,12 +127,13 @@ export default {
 
 .recipes-list {
   overflow-x: auto;
-  display: grid;
-  grid-template-columns: auto;
   row-gap: 10px;
   z-index: 90;
-  // width: 100%;
-  height: 88%;
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  padding-bottom: 0;
+  box-sizing: border-box;
 }
 
 .card {
@@ -142,7 +142,8 @@ export default {
   box-sizing: border-box;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   &.recipe {
-    z-index: 95;
+    z-index: 91;
+    margin-bottom: 10px;
   }
 }
 
