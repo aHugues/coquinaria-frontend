@@ -6,7 +6,7 @@
     <div class="recipes-list">
       <div class="card recipe" v-for="(recipe, index) in recipes" :key="index">
         <div class="recipe-time">
-          <div class="circle">
+          <div class="circle" :style="{backgroundColor: getColor(recipe.duration)}">
             {{ recipe.duration }}'
             </div>
         </div>
@@ -22,11 +22,25 @@
 </template>
 
 <script>
+
+function getColor(time) {
+  if (time < 30) {
+    return '#00838F';
+  }
+  if (time < 60) {
+    return '#1565C0';
+  }
+  return '#4527A0';
+}
+
 export default {
   name: 'RecipesList',
   props: {
     recipes: Array,
     category: String,
+  },
+  methods: {
+    getColor,
   },
 };
 </script>
