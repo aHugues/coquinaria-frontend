@@ -6,7 +6,7 @@
           <vue-material-icon name="menu" :size="32"></vue-material-icon>
         </div>
       </transition>
-      <h2 class="recipes-list-title">{{ category }} recipes</h2>
+      <h3 class="recipes-list-title">{{ category }} recipes</h3>
     </div>
     <div class="recipes-list">
       <div class="card recipe" v-for="(recipe, index) in recipes" :key="index">
@@ -63,6 +63,10 @@ export default {
   opacity: 0;
 }
 
+.spacer-1 {
+  flex: 1;
+}
+
 .recipes-list-wrapper {
   height: 100%;
 }
@@ -70,23 +74,27 @@ export default {
 .recipes-list-title {
   margin: 0;
   font-weight: 600;
+  font-size: 1.5em;
+  // line-height: 40%;
   grid-column-start: 2;
 }
 
 .recipes-list-title-wrapper {
-  display: grid;
-  grid-template-columns: 0px auto;
-  grid-template-rows: 40px;
-  transition: grid-template-columns 0.3s;
+  display: flex;
+  // grid-template-columns: 0px auto;
+  // grid-template-rows: 40px;
+  // transition: grid-template-columns 0.3s;
   align-items: center;
   z-index: 95 !important;
   height: 8%;
+  // min-height: 60px;
 }
 
 .full-size {
-  grid-template-columns: 50px auto;
+  // grid-template-columns: 50px auto;
   .menu-button {
     cursor: pointer;
+    margin-right: 20px;
   }
 }
 
@@ -111,7 +119,7 @@ export default {
 }
 
 .recipe-title {
-  font-size: 16pt;
+  font-size: 1.2em;
   font-weight: 500;
   box-sizing: border-box;
 }
@@ -130,7 +138,7 @@ export default {
   row-gap: 10px;
   z-index: 90;
   width: 100%;
-  height: 90%;
+  height: 92%;
   padding: 10px;
   padding-bottom: 0;
   box-sizing: border-box;
