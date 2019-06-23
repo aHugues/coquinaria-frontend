@@ -37,7 +37,6 @@ export default {
 .vertical-navbar {
   background-color: #FAFAFA;
   height: 100%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   z-index: 99;
   box-sizing: border-box;
   padding: 20px;
