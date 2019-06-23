@@ -2,8 +2,11 @@
   <div class="vertical-navbar">
     <div class="vertical-navbar-content">
       <div class="vertical-navbar-title">
-        Categories
-        <vue-material-icon name="menu" :size="32"></vue-material-icon>
+        <span class="vertical-navbar-title-content">Categories</span>
+        <span class="spacer-3"></span>
+        <span class="clickable">
+          <vue-material-icon name="chevron_left" :size="32"></vue-material-icon>
+        </span>
       </div>
       <vertical-nav-bar-category
         v-for="(category, index) in categories" :selected="category==selectedCategory"
@@ -44,5 +47,25 @@ export default {
   display: grid;
   grid-template-columns: auto;
   grid-row-gap: 20px;
+}
+
+.spacer-3 {
+  flex: 3;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.vertical-navbar-title {
+  display: flex;
+  align-items: center;
+
+  .vertical-navbar-title-content {
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 16pt;
+  }
 }
 </style>

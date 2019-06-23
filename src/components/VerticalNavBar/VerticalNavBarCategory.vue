@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 .vertical-navbar-category {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 15px;
   background-color: none;
   transition: background-color 0.3s;
   cursor: pointer;
