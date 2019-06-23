@@ -7,7 +7,7 @@
               </vertical-nav-bar>
             </div>
             <div class="recipes-category-wrapper" :class="{'full-page': verticalNavbarClosed}">
-              <recipes-list :category="category" :recipes="recipes"></recipes-list>
+              <recipes-list :category="category" :recipes="recipes" :menu-button="verticalNavbarClosed" @open-vertical-navbar="verticalNavbarClosed = false"></recipes-list>
             </div>
           <!-- </div> -->
         </div>
@@ -44,6 +44,8 @@ const recipesList = [
   { name: 'This is a super duper super recipe', duration: 125, description: 'This is a super duper description' },
   { name: 'This is a super super recipe', duration: 30, description: 'This is a super description' },
   { name: 'This is a super nice recipe', duration: 9, description: 'This is a nice description' },
+  { name: 'This could be a super super recipe', duration: 35, description: 'This could be a super description' },
+  { name: 'This could be a super nice recipe', duration: 90, description: 'This could be a nice description' },
 ];
 const imagesList = categoriesList.map(category => `/img/categories/${category.toLowerCase()}.png`);
 
