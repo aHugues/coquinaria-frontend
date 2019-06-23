@@ -7,7 +7,7 @@
               </vertical-nav-bar>
             </div>
             <div class="recipes-category-wrapper" :class="{'full-page': verticalNavbarClosed}">
-              <recipes-list :category="category"></recipes-list>
+              <recipes-list :category="category" :recipes="recipes"></recipes-list>
             </div>
           <!-- </div> -->
         </div>
@@ -35,6 +35,16 @@ const categoriesList = [
   'Cakes',
   'Bakeries',
 ];
+const recipesList = [
+  { name: 'This is a super recipe', duration: 45, description: 'This is a description' },
+  { name: 'This is an alright recipe', duration: 30, description: 'This is an alright description' },
+  { name: 'This is not a super recipe', duration: 15, description: 'This is not a description' },
+  { name: 'This is kind of a super recipe', duration: 45, description: 'This is kind of a description' },
+  { name: 'This is a not super recipe', duration: 40, description: 'This is a not good description' },
+  { name: 'This is a super duper super recipe', duration: 125, description: 'This is a super duper description' },
+  { name: 'This is a super super recipe', duration: 30, description: 'This is a super description' },
+  { name: 'This is a super nice recipe', duration: 9, description: 'This is a nice description' },
+];
 const imagesList = categoriesList.map(category => `/img/categories/${category.toLowerCase()}.png`);
 
 const getCategories = () => ({
@@ -42,6 +52,7 @@ const getCategories = () => ({
   images: imagesList,
   category: '',
   verticalNavbarClosed: false,
+  recipes: recipesList,
 });
 
 function onOpenCategory(category) {
