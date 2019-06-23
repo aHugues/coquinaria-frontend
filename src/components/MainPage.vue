@@ -2,10 +2,11 @@
     <div id="main-page">
         <div v-if="category != ''" class="selected-category-wrapper" @v-on:close-category="onCloseCategory">
           <!-- <div v-on:click.stop class="selected-category-content"> -->
-            <div class="vertical-navbar-wrapper">
-              <vertical-nav-bar :categories="categories" :selectedCategory="category"></vertical-nav-bar>
+            <div class="vertical-navbar-wrapper" :class="{ closed: verticalNavbarClosed }">
+              <vertical-nav-bar :categories="categories" :selectedCategory="category" @close-vertical-navbar="verticalNavbarClosed = true">
+              </vertical-nav-bar>
             </div>
-            <div class="recipes-category-wrapper">
+            <div class="recipes-category-wrapper" :class="{'full-page': verticalNavbarClosed}">
               <recipes-list :category="category"></recipes-list>
             </div>
           <!-- </div> -->
@@ -40,6 +41,7 @@ const getCategories = () => ({
   categories: categoriesList,
   images: imagesList,
   category: '',
+  verticalNavbarClosed: false,
 });
 
 function onOpenCategory(category) {
@@ -69,6 +71,14 @@ export default {
 
 $vertical-navbar-width: 300px;
 
+.closed {
+  width: 0px !important;
+}
+
+.full-page {
+  left: 0 !important;
+}
+
 .selected-category-wrapper {
     width: 100%;
     height: 100%;
@@ -79,10 +89,12 @@ $vertical-navbar-width: 300px;
 
 .vertical-navbar-wrapper {
   width: $vertical-navbar-width;
+  transition: width 0.3s;
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 98;
+  overflow: hidden;
 }
 
 .recipes-category-wrapper {
@@ -91,7 +103,7 @@ $vertical-navbar-width: 300px;
   left: $vertical-navbar-width;
   right: 0;
   bottom: 0;
-
+  transition: left 0.3s;
 }
 
 .selected-category-content {

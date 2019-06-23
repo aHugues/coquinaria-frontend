@@ -4,7 +4,7 @@
       <div class="vertical-navbar-title">
         <span class="vertical-navbar-title-content">Categories</span>
         <span class="spacer-3"></span>
-        <span class="clickable">
+        <span class="clickable" @click="$emit('close-vertical-navbar')">
           <vue-material-icon name="chevron_left" :size="32"></vue-material-icon>
         </span>
       </div>
